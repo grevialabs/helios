@@ -33,7 +33,10 @@ export default {
     },
     methods: {
        addTicket() {
-            alert('clicked');
+             let uri = 'http://localhost:4000/tickets/add';
+            this.axios.post(uri, this.ticket).then((response) => {
+               console.log(response);
+            });
        }
     }
 }
