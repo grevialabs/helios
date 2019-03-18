@@ -24,6 +24,8 @@
 </template>
 
 <script>
+    // import config from "../../config.js"
+    import config from "../../config"
 
     export default {
         data(){
@@ -40,15 +42,27 @@
         methods: {
             fetchItems()
             {
-            //   let uri = 'http://localhost:4000/tickets';
-            //   let uri = 'http://liquid.grevialabs.com/api/v1/user/get_list?token=macbook';
-              let uri = 'http://localhost/liquid/api/v1/user/get_list?token=macbook';
-              let listdata;
-              this.axios.get(uri).then((response) => {
-                  console.log(response.data);
-                  listdata = response.data;
-                  this.users = listdata.data;
-              });
+                // axios.defaults.headers = {
+                //     // 'Content-Type': 'application/json',
+                //     // Authorization: 'myspecialpassword',
+                //     'Token' : 'macbook',
+                //     'token' : 'macbook',
+                // }
+
+                // const auth = {
+                //     headers: {token : 'macbook',Token : 'macbook',} 
+                // }
+                
+                // console.log(process.env);
+                // console.log(config.API_URL);
+                //   let uri = 'http://liquid.grevialabs.com/api/v1/user/get_list?token=macbook';
+                let uri = config.API_URL + 'user/get_list?token=macbook';
+                let listdata;
+                this.axios.get(uri).then((response) => {
+                    // console.log(response.data);
+                    listdata = response.data;
+                    this.users = listdata.data;
+                });
             }
         }
     }

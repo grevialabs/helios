@@ -33,8 +33,7 @@ export default {
     },
     methods: {
        addTicket() {
-            //  let uri = 'http://localhost:4000/tickets/add';
-             let uri = 'http://liquid.grevialabs.com/api/v1/user';
+             let uri = 'http://localhost:4000/tickets/add';
             this.axios.post(uri, this.ticket).then((response) => {
                console.log(response);
             });
