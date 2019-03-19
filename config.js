@@ -31,6 +31,7 @@ config.redis.uri = process.env.DUOSTACK_DB_REDIS;
 config.redis.host = 'hostname';
 config.redis.port = 6379;
 config.web.port = process.env.WEB_PORT || 9980;
-config.API_URL = 'http://localhost/liquid/api/v1/';
+// config.API_URL = 'http://localhost/liquid/api/v1/';
+config.API_URL = 'http://liquid.grevialabs.com/api/v1/';
 
 module.exports = config;
